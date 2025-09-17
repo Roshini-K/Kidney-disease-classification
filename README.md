@@ -126,3 +126,8 @@ then open : https://localhost:8080
 pip install pytest
 pytest -v
 ```
+
+## UI results
+
+![Output 1](assets/output1.png)  
+![Output 2](assets/output2.png)
