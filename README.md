@@ -14,6 +14,25 @@
 9. Update the dvc.yaml
 10. app.py
 
+
+## Project Structure
+
+├── src/cnnClassifier/ # Core package
+│ ├── components/ # Data ingestion, training, evaluation modules
+│ ├── pipeline/ # Training & prediction pipelines
+│ ├── utils/ # Common utility functions
+│ ├── config/ # Config management
+│ └── entity/ # Dataclass-based configs
+├── artifacts/ # Generated artifacts (gitignored)
+├── templates/ # Flask HTML templates
+├── app.py # Flask entrypoint
+├── dvc.yaml # DVC pipeline
+├── params.yaml # Model/training parameters
+├── requirements.txt # Python dependencies
+├── Dockerfile # Docker build instructions
+├── setup.py # Packaging setup
+└── tests/ # Unit tests (pytest)
+
 # How to run?
 ### STEPS:
 
@@ -79,3 +98,31 @@ DVC
  - Its very lite weight for POC only
  - lite weight expriements tracker
  - It can perform Orchestration (Creating Pipelines)
+
+
+## Docker
+
+### Docker commands to run and build locally
+
+1. build docker image
+```bash
+docker build -t kidney-app:local .
+```
+
+2. Run container (from powershell/terminal)
+```bash
+docker run --rm -p 8080:8080 `
+  -e MLFLOW_TRACKING_URI=https://dagshub.com/Roshini-K/Kidney-disease-classification.mlflow `
+  -e MLFLOW_TRACKING_USERNAME=Roshini-K `
+  -e MLFLOW_TRACKING_PASSWORD=YOUR_DAGSHUB_TOKEN `
+  kidney-app:local
+```
+then open : https://localhost:8080
+
+## Docker
+- Unit tests are provided in the tests/ folder. Run them using:
+
+```bash
+pip install pytest
+pytest -v
+```
