@@ -129,5 +129,5 @@ pytest -v
 
 ## UI results
 
-![Output 1](assets/output1.png)  
-![Output 2](assets/output2.png)
+![Output 1](assets/img1.png)  
+![Output 2](assets/img2.png)
