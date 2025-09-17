@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.log
+
+# Envs & IDE
+.env
+.venv/
+venv/
+.idea/
+.vscode/
+
+# Artifacts & data
+artifacts/
+mlruns/
+.dvc/cache/
+*.dvc
+data/
+
+# Git
+.git
+.gitignore
